@@ -29,5 +29,5 @@ def insert_one(user):
     with connect() as con:
         with con.cursor() as cursor:
             sql = "INSERT INTO ranking(name, score) VALUES(%s, %s)" #* %sで内容を仮置き
-            cursor.execute(sql, (user["user"], user["score"]))
+            cursor.execute(sql, (user["name"], user["score"]))
         con.commit() #* 変更がある場合はCommitする
